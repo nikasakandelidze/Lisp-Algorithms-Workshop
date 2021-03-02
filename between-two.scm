@@ -1,0 +1,10 @@
+
+(define (between-two seq a b)
+	(if (null? seq)
+		'()
+		(if (and (> (car seq) a) (< (car seq) b))
+			(cons (car seq) (between-two (cdr seq) a b))
+			(between-two (cdr seq) a b)
+		)
+	)
+)
